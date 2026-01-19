@@ -1,0 +1,14 @@
+# Datos 
+data/
+
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env
+
+# Archivos de base de datos local
+*.db
+*.sqlite3
