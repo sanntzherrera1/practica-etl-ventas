@@ -1,12 +1,13 @@
 import pandas as pd
+import extract as exc
 
+route = ('../data/raw/data_ventas.csv')
 
-df_ventas = pd.read_csv('../data/raw/data_ventas.csv')
+new_df_ventas = exc.ver_data(route)
 
-#Visualizo el csv
-
-print(df_ventas.head(5))
-
+if new_df_ventas is not None:
+    print("\n Impresion del csv:")
+    print(new_df_ventas.head(5))
 
 
 
