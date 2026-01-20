@@ -3,6 +3,7 @@ import os
 import extract as exc
 import transform as tr
 import load as ld
+import analytics as an
 
 def run_main_etl():
     print("INICIANDO PROCESO ETL \n")
@@ -27,11 +28,21 @@ def run_main_etl():
     if df_clean is None:
         print("ERROR en Transformación. Se cancela el proceso.")
         return
+    
+    #LOAD
+    print("\n[LOAD] Guardando archivos...")
+    # Guardamos la data limpia completa
+    ld.load_data_csv(df_clean, 'ventas_limpias.csv')
+    
+    #Genero el analisis de metrica rfm
+    print("\n [ANALYSIS] Generando matriz RFM...")
+    df_rfm = an.analizar_rfm(df_clean)
 
-    #Carga del df a un nuevo csv
-    print("\n[LOAD] Guardando resultado...")
-    # Le pasamos el resultado del paso 2
-    ld.load_data_csv(df_clean, 'ventas_finales_limpio.csv')
+    # Guardamos el análisis RFM
+    if df_rfm is not None:
+        #acordarse - reset_index() para que el email se guarde como columna y no como índice
+        ld.load_data_csv(df_rfm.reset_index(), 'reporte_rfm_clientes.csv')
+
 
     print("\nETL TERMINADO CON ÉXITO! ")
 
