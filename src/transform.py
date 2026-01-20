@@ -1,9 +1,6 @@
 import pandas as pd
 import extract as exc
 
-route = ('../data/raw/data_ventas.csv')
-new_df_ventas = exc.ver_data(route)
-
 
 def transform_data(dataframe):
 
@@ -28,7 +25,7 @@ def transform_data(dataframe):
         #  Forzamos conversión a enteros
         dataframe['cantidad'] = pd.to_numeric(dataframe['cantidad'], errors='coerce')
 
-        new_df_ventas['cantidad'] = dataframe['cantidad'].fillna(0).astype(int)
+        dataframe['cantidad'] = dataframe['cantidad'].fillna(0).astype(int)
 
         # Limpieza de nulos 
         dataframe['precio_unitario'] = pd.to_numeric(dataframe['precio_unitario'], errors='coerce').fillna(0)
@@ -36,10 +33,17 @@ def transform_data(dataframe):
 
         # Retorno final
         print("\n--- Data Transformada ---")
+        print(dataframe)
         
         return dataframe
     else:
         
         print("Hubo un error con el archivo")
 
-clean_df_ventas = transform_data(new_df_ventas)
+
+if __name__ == "__main__":
+    #Se ejecuta si no uso main.py
+    print("---Transform data---")
+    route = '../data/raw/data_ventas.csv'
+    df = exc.ver_data(route)
+    transform_data(df)
