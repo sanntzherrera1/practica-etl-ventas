@@ -1,0 +1,9 @@
+id_venta,fecha,producto,cantidad,precio_unitario,cliente_email
+"1001",2024-01-15,"Teclado Mecanico",2,50.00,juan@mail.com"
+"1002",15/01/2024,"Mouse Gamer",1,35.50,ana.g@mail.com"
+"1003",2024-01-16,"Monitor 24" ",,180.00
+"1004",2024-01-16,"Cable HDMI",3,10.00,pedro@mail.com"
+"1005",17-01-2024,"teclado mecanico",1,50.00,juan@mail.com"
+"1006",2024-01-18,"Silla Gamer",uno,250.00,luis@empresa.com"
+"1007",2024-01-18,"Mouse Pad ",5,,maria@mail.com"
+"1001",2024-01-15,"Teclado Mecanico",2,50.00,juan@mail.com"
