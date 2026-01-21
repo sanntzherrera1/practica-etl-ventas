@@ -40,3 +40,25 @@ El proyecto es orquestado por `main.py` y sigue este flujo lógico:
 ├── requirements.txt  # Dependencias
 └── README.md         # Documentación del proyecto
 ```
+## 🧪 ¡Pruébalo tú mismo!
+
+He incluido un dataset de muestra (`data_ventas.csv`) en la carpeta `data/raw/` para que puedas clonar el repo y ver el código en acción sin configuraciones extra.
+
+### Instalación y Ejecución
+
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/sanntzherrera1/practica-etl-ventas.git](https://github.com/sanntzherrera1/practica-etl-ventas.git)
+    cd practica-etl-ventas
+    ```
+
+2.  **Instalar dependencias:**
+    ```bash
+    pip install pandas
+    ```
+
+3.  **Correr el pipeline:**
+    ```bash
+    python main.py
+    ```
+    *Al finalizar, verás los resultados generados en la carpeta `data/output/`.*
