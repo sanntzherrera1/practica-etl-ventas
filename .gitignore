@@ -1,6 +1,9 @@
 # Datos 
 # data/
 
+#Outputs
+output/
+
 # Caché de Python
 __pycache__/
 *.pyc
