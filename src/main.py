@@ -11,7 +11,7 @@ def run_main_etl():
     #Extraccion/Lectura del csv
     print("[EXTRACT] Leyendo archivo...")
     # Ajusta esta ruta según dónde esté tu archivo real
-    route = '../data/raw/data_ventas.csv' 
+    route = './data/raw/data_ventas.csv' 
     df_raw = exc.ver_data(route)
 
     #Manejo de error por extraccion
